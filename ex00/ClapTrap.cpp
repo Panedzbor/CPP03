@@ -1,12 +1,6 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::ClapTrap() : hitPts(10), energyPts(10), attackDmg(0)
-{
-    std::cout << "ClapTrap constructor called\n";
-    std::cout << "\n";
-}
-
 ClapTrap::ClapTrap(std::string name) : name(name), hitPts(10), energyPts(10), attackDmg(0) 
 {
     std::cout << "ClapTrap constructor called\n";
@@ -16,6 +10,12 @@ ClapTrap::ClapTrap(std::string name) : name(name), hitPts(10), energyPts(10), at
 ClapTrap::ClapTrap(const ClapTrap& original)
 {
     (void)original;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& original)
+{
+    (void)original;
+    return (*this);
 }
 
 ClapTrap::~ClapTrap()
